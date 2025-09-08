@@ -4,7 +4,7 @@ function calculate(operator) {
     let result;
 
     if (isNaN(num1) || isNaN(num2)) {
-        alert("Please enter both numbers!");
+        alert("Please Enter both numbers!");
         return;
     }
     switch (operator) {
