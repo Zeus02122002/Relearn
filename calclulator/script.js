@@ -4,7 +4,7 @@ function calculate(operator) {
     let result;
 
     if (isNaN(num1) || isNaN(num2)) {
-        document.getElementById("result").value = "ERROR";
+        alert("Please Enter both numbers!");
         return;
     }
     switch (operator) {
