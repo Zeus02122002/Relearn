@@ -1,48 +1,73 @@
-    <!DOCTYPE html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <title>Avenger Head Q</title>
-    </head>
-    <body>
-        
-    <header>
-        <h1>AVENGER HQ</h1>
-    </header>
-    <section class="banner">
-        <img img src="img/Avg.jpg"alt="Avenger">
-        <div class="welcome">
-            <h2>welcome to <br><span>Avenger</span></h2>
-        </div>
-    </section>
-    <nav class="main-nav">
-    <ul>    
-        <li><a href="index.html"class="Home">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="help.html">Help</a></li>
-    </ul>
-    </nav>
-    <main>
-        <article>
-            <h2>AVENGER ASSEMBLE </h2>
-            <p>“Get ready to meet our Avenger — a true force of strength, determination, and resilience. More than just a hero, this is someone who stands tall in the face of challenges, protects what matters most, and inspires those around them to push beyond limits. Our Avenger isn’t just here to fight battles, but to represent courage, unity, and the spirit of never giving up. Meet the Avenger who carries both power and purpose.”</p>
-        </article>
-        <ul class="images">
-            <li><img src="img/spm.png" alt="Spiderman"></li>
-            <li><img src ="img/bp.png" alt="BlackPanther"></li>
-        </ul>
-    </main>
-    <section class ="join">
-        <h2>Join the Avenger</h2>
-        <p>To Become a Superhero Please Enter your E-mail below and press Join</p>
-        <form>
-            <input type="email"name="email"placeholder="Enter your email"required>
-        </form>
-        <a href="https://www.marvel.com/movies/avengers-endgame" class="btn">Join Now</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Avenger Head Q</title>
+</head>
+<body class="font-sans bg-gray-100">
+    <header class="bg-red-700 fixed w-full top-0 left-0 z-10 text-center p-4">
+    <h1 class="text-white border-4 border-white rounded-full px-4 py-2 inline-block text-2xl font-bold">AVENGER HQQ</h1>
+  </header>
 
-    </section>
-    <footer>
-        <p class="lorem"dfdfdfdfdfdfdfdfdfdfdfd></p>
-    </footer>
-    </body>
-    </html>
+  <section class="relative mt-20">
+    <img src="img/Avg.jpg" alt="Avenger" class="w-full">
+    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-white">
+      <h2 class="text-3xl md:text-5xl font-bold text-blue-300">
+        Welcome to <br><span class="text-yellow-400">Avenger</span>
+      </h2>
+    </div>
+  </section>
+
+  <nav class="bg-gray-200 sticky top-[90px]">
+    <ul class="flex flex-wrap justify-center gap-6 py-4 text-xl">
+      <li><a href="index.html" class="text-green-600 hover:underline">Home</a></li>
+      <li><a href="about.html" class="text-red-600 hover:text-green-600 hover:underline">About</a></li>
+      <li><a href="contact.html" class="text-red-600 hover:text-green-600 hover:underline">Contact</a></li>
+      <li><a href="help.html" class="text-red-600 hover:text-green-600 hover:underline">Help</a></li>
+    </ul>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <article>
+      <h2 class="text-4xl font-bold text-red-600 mb-4">AVENGER ASSEMBLE</h2>
+      <p class="text-red-600 leading-relaxed">
+        Get ready to meet our Avenger — a true force of strength, determination, and resilience. 
+        More than just a hero, this is someone who stands tall in the face of challenges, protects 
+        what matters most, and inspires those around them to push beyond limits. 
+        Our Avenger isn’t just here to fight battles, but to represent courage, unity, and the spirit 
+        of never giving up. Meet the Avenger who carries both power and purpose.
+      </p>
+    </article>
+
+    <!-- Images -->
+    <ul class="flex flex-wrap justify-center gap-6 mt-12">
+      <li class="w-2/5 hover:-translate-y-1 transition">
+        <img src="img/spm.png" alt="Spiderman" class="w-full rounded-lg shadow-lg">
+      </li>
+      <li class="w-2/5 hover:-translate-y-1 transition">
+        <img src="img/bp.png" alt="Black Panther" class="w-full rounded-lg shadow-lg">
+      </li>
+    </ul>
+  </main>
+
+  <!-- Join Section -->
+  <section class="bg-red-300 text-center py-12 px-4 text-blue-900">
+    <h2 class="text-3xl font-bold mb-4">Join the Avenger</h2>
+    <p class="mb-6">To Become a Superhero Please Enter your E-mail below and press Join</p>
+    <form class="flex flex-col items-center gap-4">
+      <input type="email" name="email" placeholder="Enter your email" required
+        class="px-6 py-3 w-80 rounded-full border-4 border-yellow-600 focus:border-yellow-700 focus:ring-2 focus:ring-yellow-500 text-lg">
+      <a href="https://www.marvel.com/movies/avengers-endgame" 
+         class="bg-green-600 text-white font-bold px-6 py-3 rounded-full hover:bg-green-700 transition">
+        Join Now
+      </a>
+    </form>
+  </section>
+
+  <footer class="bg-red-600 text-blue-200 py-4 text-center">
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+  </footer>
+</body>
+</html>
