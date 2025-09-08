@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" ></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen text-black bg-blue-300">
+    <div class="text-center bg-gray-500 text-3xl rounded-full shadow-lg px-6 py-2 mb-6">
+        CALCULATOR
+    </div>
+
+    <div class="my-five">
+        <input id="num1" type="number" class="bg-black text-5xl text-center text-white rounded-lg p-2" placeholder="First number">
+    </div>
+
+    <div class="my-5">
+        <input id="num2" type="number" class="bg-black text-5xl text-center text-white rounded-lg p-2" placeholder="Second number">
+    </div>
+    <div class="space-x-4 my-5">
+        <button onclick="calculate('+')" class="px-4 py-2 rounded-full text-xl bg-green-600">+</button>
+        <button onclick="calculate('-')" class="px-4 py-2 rounded-full text-xl bg-white">-</button>
+        <button onclick="calculate('*')" class="px-4 py-2 rounded-full text-xl bg-white">×</button>
+        <button onclick="calculate('/')" class="px-4 py-2 rounded-full text-xl bg-white">÷</button>
+    </div>
+    <input id="result" type="text" class="bg-black text-5xl text-center text-white rounded-lg p-2" placeholder="Result" disabled>
+</body>
+</html>
