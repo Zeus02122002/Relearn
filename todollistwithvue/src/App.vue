@@ -28,7 +28,8 @@
         <li
           v-for="(todo, index) in filteredTodos"
           :key="index"
-          class="flex bg-white justify-between items-center mb-2 p-2 border rounded">          
+          class="flex bg-white justify-between items-center mb-2 p-2 border rounded">
+          
           <div v-if="todo.editing" class="flex-1 flex items-center gap-2">
             <input
               v-model="todo.text"
@@ -47,17 +48,6 @@
           </div>
 
           <div v-else class="flex items-center flex-1 gap-2">
-
-          <div v-if="todo.editing" class="flex-1">
-            <input
-              v-model="todo.text"
-              @keyup.enter="todo.editing = false"
-              @blur="todo.editing = false"
-              class="w-full border rounded px-2 py-1"
-              autofocus />
-          </div>
-          <div class="flex items-center flex-1 gap-2">
-
             <input type="checkbox" v-model="todo.completed" class="w-4 h-4" />
             <span :class="todo.completed ? 'line-through text-gray-500' : ''">
               {{ todo.text }}
@@ -66,9 +56,6 @@
 
           <div v-if="!todo.editing" class="ml-2 flex gap-2">
             <button
-          <div class="ml-2 flex gap-2">
-            <button
-              v-if="!todo.editing"
               @click="enableEdit(index)"
               class="text-blue-500 hover:underline">
               Edit
@@ -135,13 +122,6 @@ const toggleComplete = (index: number): void => {
   todos.value[index].completed = !todos.value[index].completed;
 };
 
-=======
-const enableEdit = (index: number): void => {
-  todos.value[index].editing = true;
-};
-const toggleComplete = (index: number): void => {
-  todos.value[index].completed = !todos.value[index].completed;
-};
 watch(
   todos,
   (newVal) => {
@@ -149,6 +129,7 @@ watch(
   },
   { deep: true }
 );
+
 export default {
   setup() {
     return {
@@ -161,7 +142,6 @@ export default {
       enableEdit,
       finishEdit,
       cancelEdit,
-
       toggleComplete,
     };
   },
