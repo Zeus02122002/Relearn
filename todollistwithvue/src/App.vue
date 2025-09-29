@@ -5,7 +5,6 @@
       <h1 class="text-2xl font-bold text-center mb-4 text-white">
         My Todo List
       </h1>
-
       <div class="flex mb-4">
         <input
           v-model="searchQuery"
@@ -29,7 +28,26 @@
         <li
           v-for="(todo, index) in filteredTodos"
           :key="index"
-          class="flex bg-white justify-between items-center mb-2 p-2 border rounded">
+          class="flex bg-white justify-between items-center mb-2 p-2 border rounded">          
+          <div v-if="todo.editing" class="flex-1 flex items-center gap-2">
+            <input
+              v-model="todo.text"
+              class="flex-1 border rounded px-2 py-1"
+              autofocus />
+            <button
+              @click="finishEdit(index)"
+              class="text-green-600 hover:underline">
+              ✅
+            </button>
+            <button
+              @click="cancelEdit(index)"
+              class="text-red-500 hover:underline">
+              ❌
+            </button>
+          </div>
+
+          <div v-else class="flex items-center flex-1 gap-2">
+
           <div v-if="todo.editing" class="flex-1">
             <input
               v-model="todo.text"
@@ -39,11 +57,15 @@
               autofocus />
           </div>
           <div class="flex items-center flex-1 gap-2">
+
             <input type="checkbox" v-model="todo.completed" class="w-4 h-4" />
             <span :class="todo.completed ? 'line-through text-gray-500' : ''">
               {{ todo.text }}
             </span>
           </div>
+
+          <div v-if="!todo.editing" class="ml-2 flex gap-2">
+            <button
           <div class="ml-2 flex gap-2">
             <button
               v-if="!todo.editing"
@@ -96,6 +118,24 @@ const addTodo = (): void => {
 const removeTodo = (index: number): void => {
   todos.value.splice(index, 1);
 };
+
+const enableEdit = (index: number): void => {
+  todos.value[index].editing = true;
+};
+
+const finishEdit = (index: number): void => {
+  todos.value[index].editing = false;
+};
+
+const cancelEdit = (index: number): void => {
+  todos.value[index].editing = false;
+};
+
+const toggleComplete = (index: number): void => {
+  todos.value[index].completed = !todos.value[index].completed;
+};
+
+=======
 const enableEdit = (index: number): void => {
   todos.value[index].editing = true;
 };
@@ -119,6 +159,9 @@ export default {
       addTodo,
       removeTodo,
       enableEdit,
+      finishEdit,
+      cancelEdit,
+
       toggleComplete,
     };
   },
